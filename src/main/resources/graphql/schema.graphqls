@@ -1,0 +1,21 @@
+type Shipper {
+    shipperId: Int!
+    companyName: String!
+    phone: String
+}
+
+input ShipperInput {
+    companyName: String!
+    phone: String
+}
+
+type Query {
+    shippers: [Shipper!]!
+    shipperById(id: Int!): Shipper
+}
+
+type Mutation {
+    createShipper(input: ShipperInput!): Shipper!
+    updateShipper(id: Int!, input: ShipperInput!): Shipper
+    deleteShipper(id: Int!): Boolean!
+}

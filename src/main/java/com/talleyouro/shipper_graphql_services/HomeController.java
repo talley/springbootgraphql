@@ -1,0 +1,17 @@
+package com.talleyouro.shipper_graphql_services;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class HomeController {
+
+
+	@GetMapping("/")
+	public String Index(Model model) {
+		
+		model.addAttribute("welcome", "GraphQL Services are running");
+		return "index";
+	}
+}
